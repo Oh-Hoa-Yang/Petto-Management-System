@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "1040387399500",
+    "project_id": "petto-management-application",
+    "storage_bucket": "petto-management-application.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1040387399500:android:f54158a26b7ceb4cfe79e9",
+        "android_client_info": {
+          "package_name": "com.example.pettomanagementsystem"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCO8OY1YT-dIq8XdbVHuRWUPO4dSo6d1kc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

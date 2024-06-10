@@ -38,13 +38,13 @@ public class HomeActivity extends AppCompatActivity {
             }
         });
 
-//        petCard.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                Intent intent = new Intent(HomeActivity.this, PetProfileActivity.class);
-//                startActivity(intent);
-//            }
-//        });
+        petCard.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(HomeActivity.this, PetProfileActivity.class);
+                startActivity(intent);
+            }
+        });
 //
 //        healthCard.setOnClickListener(new View.OnClickListener() {
 //            @Override

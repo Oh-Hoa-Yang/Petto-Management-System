@@ -61,14 +61,6 @@
                 android:scaleType="centerCrop"  />
 
             <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Petname"
-                android:textSize="16sp"
-                android:textColor="@color/black"
-                android:padding="8dp" />
-
-            <TextView
                 android:id="@+id/petname"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -78,12 +70,13 @@
                 android:textSize="18sp" />
 
             <TextView
+                android:id="@+id/pet_age"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Type"
-                android:textSize="16sp"
+                android:padding="8dp"
+                android:text="Age"
                 android:textColor="@color/black"
-                android:padding="8dp" />
+                android:textSize="18sp" />
 
             <TextView
                 android:id="@+id/pettype"
@@ -93,14 +86,6 @@
                 android:text="Type"
                 android:textColor="@color/black"
                 android:textSize="18sp" />
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Breed"
-                android:textSize="16sp"
-                android:textColor="@color/black"
-                android:padding="8dp" />
 
             <TextView
                 android:id="@+id/breed"

@@ -22,15 +22,12 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
-import org.checkerframework.checker.nullness.qual.NonNull;
 
-import java.util.ArrayList;
-import java.util.List;
 
 public class PetProfileActivity extends AppCompatActivity {
 
     Button editProfileButton, registerNewPet;
-    TextView petnameView, pettypeView, breedView;
+    TextView petageView, petnameView, pettypeView, breedView;
     ImageView petProfileImageView;
     DatabaseReference petReference;
 
@@ -39,11 +36,14 @@ public class PetProfileActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_pet_profile);
 
-        registerNewPet = findViewById(R.id.register_new_pet_btn);
-        editProfileButton = findViewById(R.id.profile_edit_btn);
+//        editProfileButton = findViewById(R.id.profile_edit_btn);
+
         petnameView = findViewById(R.id.petname);
+        petageView = findViewById(R.id.pet_age);
         pettypeView = findViewById(R.id.pettype);
         breedView = findViewById(R.id.breed);
+        registerNewPet = findViewById(R.id.register_new_pet_btn);
+        editProfileButton = findViewById(R.id.profile_edit_btn);
         petProfileImageView = findViewById(R.id.petProfileImageView);
 
         Toolbar toolbar = findViewById(R.id.toolbar);
@@ -54,23 +54,30 @@ public class PetProfileActivity extends AppCompatActivity {
 
         if (currentUser != null) {
             String userId = currentUser.getUid();
-            petReference = FirebaseDatabase.getInstance().getReference("petinfo").child(userId);
+
+            petReference = FirebaseDatabase.getInstance().getReference("userinfo").child(userId).child("pets");
             petReference.addValueEventListener(new ValueEventListener() {
                 @Override
                 public void onDataChange(DataSnapshot dataSnapshot) {
-                    if (dataSnapshot.exists()) {
-                        String petName = dataSnapshot.child("petname").getValue(String.class);
-                        String petType = dataSnapshot.child("type").getValue(String.class);
-                        String breed = dataSnapshot.child("breed").getValue(String.class);
-                        String petProfilePictureUri = dataSnapshot.child("profile_picture").getValue(String.class);
+                    for (DataSnapshot petSnapshot : dataSnapshot.getChildren()) {
+                        String petName = petSnapshot.child("name").getValue(String.class);
+                        String petAge = petSnapshot.child("age").getValue(String.class);
+                        String petType = petSnapshot.child("type").getValue(String.class);
+                        String breed = petSnapshot.child("breed").getValue(String.class);
+                        String petPhotoUrl = petSnapshot.child("photo").getValue(String.class);
 
+                        // Display the pet information in TextViews
                         petnameView.setText(petName);
+                        petageView.setText(petAge);
                         pettypeView.setText(petType);
                         breedView.setText(breed);
-                        if (petProfilePictureUri != null && !petProfilePictureUri.isEmpty()) {
-                            Glide.with(PetProfileActivity.this).load(petProfilePictureUri).into(petProfileImageView);
+
+                        // Load and display the pet photo using Glide
+                        if (petPhotoUrl != null && !petPhotoUrl.isEmpty()) {
+                            Glide.with(PetProfileActivity.this).load(petPhotoUrl).into(petProfileImageView);
                         } else {
-                            petProfileImageView.setImageResource(R.drawable.pettype);
+                            // If there's no photo available, you can set a default image
+                            petProfileImageView.setImageResource(R.drawable.default_pet_image);
                         }
                     }
                 }
@@ -81,16 +88,16 @@ public class PetProfileActivity extends AppCompatActivity {
                 }
             });
 
+
+
+
             registerNewPet.setOnClickListener(v -> {
                 Intent intent = new Intent(PetProfileActivity.this, PetRegisterActivity.class);
                 startActivity(intent);
             });
-//            editProfileButton.setOnClickListener(v -> {
-//                Intent intent = new Intent(PetProfileActivity.this, EditPetProfileActivity.class);
-//                startActivity(intent);
-//            });
         }
     }
+
 
     private void onNavigationIconClick() {
         Intent intent = new Intent(PetProfileActivity.this, SideMenuActivity.class);

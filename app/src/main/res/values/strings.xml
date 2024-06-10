@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Petto Management System</string>
+    <string name="pet_photo">Pet Photo</string>
+    <!-- Add other string resources here -->
 </resources>

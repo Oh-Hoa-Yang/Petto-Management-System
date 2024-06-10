@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="8dp"
+    android:background="@color/purpleDark">
+
+    <TextView
+        android:id="@+id/textViewLineA"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Text View"
+        android:textColor="@color/colorWhite"
+        android:textSize="16sp"
+        android:textStyle="italic" />
+    <TextView
+        android:id="@+id/textViewLineB"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Text View"
+        android:textColor="@color/colorWhite"
+        android:textSize="16sp"
+        android:textStyle="italic" />
+    <TextView
+        android:id="@+id/textViewLineC"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Text View"
+        android:textColor="@color/colorWhite"
+        android:textSize="16sp"
+        android:textStyle="italic" />
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:orientation="horizontal"
+        android:weightSum="1"
+        android:layout_height="wrap_content">
+        <TextView
+            android:id="@+id/textViewLineD"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.4"
+            android:text="Text View"
+            android:textColor="@color/yellowLight"
+            android:textSize="14sp"
+            android:textStyle="italic" />
+        <TextView
+            android:id="@+id/textViewLineE"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.6"
+            android:text="Text View"
+            android:textColor="@color/yellowLight"
+            android:textSize="14sp"
+            android:textStyle="italic" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:orientation="horizontal"
+        android:weightSum="1"
+        android:layout_height="wrap_content">
+        <TextView
+            android:id="@+id/textViewLineF"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.3"
+            android:text="Text View"
+            android:textColor="@color/teal_200"
+            android:textSize="12sp"
+            android:textStyle="italic" />
+        <TextView
+            android:id="@+id/textViewLineG"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.2"
+            android:text="Text View"
+            android:textColor="@color/teal_200"
+            android:textSize="12sp"
+            android:textStyle="italic" />
+        <TextView
+            android:id="@+id/textViewLineH"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.5"
+            android:text="Text View"
+            android:textColor="@color/teal_200"
+            android:textSize="12sp"
+            android:textStyle="italic" />
+    </LinearLayout>
+
+</LinearLayout>

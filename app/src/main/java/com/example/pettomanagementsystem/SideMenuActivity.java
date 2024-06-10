@@ -89,9 +89,9 @@ public class SideMenuActivity extends AppCompatActivity {
 //                    case 2:
 //                        startActivity(new Intent(SideMenuActivity.this, PetProfileActivity.class));
 //                        break;
-//                    case 3:
-//                        startActivity(new Intent(SideMenuActivity.this, HealthMonitorActivity.class));
-//                        break;
+                    case 3:
+                        startActivity(new Intent(SideMenuActivity.this, HealthMonitorActivity.class));
+                        break;
 //                    case 4:
 //                        startActivity(new Intent(SideMenuActivity.this, EmergencyActivity.class));
 //                        break;

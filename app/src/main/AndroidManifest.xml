@@ -43,6 +43,24 @@
         <activity
             android:name=".MainActivity"
             android:exported="true" />
+        <activity
+            android:name=".BookingRecordsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".DisplayTemperatureActivity"
+            android:exported="false" />
+        <activity
+            android:name=".SelectClinicActivity"
+            android:exported="false" />
+        <activity
+            android:name=".BookTreatmentActivity"
+            android:exported="false" />
+        <activity
+            android:name=".SelectTreatmentsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".HealthMonitorActivity"
+            android:exported="false" />
 
         <activity
             android:name=".SplashActivity"

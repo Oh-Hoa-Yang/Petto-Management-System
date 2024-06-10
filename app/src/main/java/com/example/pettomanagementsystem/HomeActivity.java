@@ -46,13 +46,13 @@ public class HomeActivity extends AppCompatActivity {
 //            }
 //        });
 //
-//        healthCard.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                Intent intent = new Intent(HomeActivity.this, HealthMonitorActivity.class);
-//                startActivity(intent);
-//            }
-//        });
+        healthCard.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(HomeActivity.this, HealthMonitorActivity.class);
+                startActivity(intent);
+            }
+        });
 //
 //        emergencyCard.setOnClickListener(new View.OnClickListener() {
 //            @Override

@@ -36,8 +36,6 @@ public class PetProfileActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_pet_profile);
 
-//        editProfileButton = findViewById(R.id.profile_edit_btn);
-
         petnameView = findViewById(R.id.petname);
         petageView = findViewById(R.id.pet_age);
         pettypeView = findViewById(R.id.pettype);
@@ -88,8 +86,10 @@ public class PetProfileActivity extends AppCompatActivity {
                 }
             });
 
-
-
+            editProfileButton.setOnClickListener(v -> {
+                Intent intent = new Intent(PetProfileActivity.this, EditPetProfileActivity.class);
+                startActivity(intent);
+            });
 
             registerNewPet.setOnClickListener(v -> {
                 Intent intent = new Intent(PetProfileActivity.this, PetRegisterActivity.class);

@@ -197,7 +197,6 @@ public class EditPetProfileActivity extends AppCompatActivity {
         finish();
     }
 
-
     @Override
     public void onRequestPermissionsResult(int requestCode, String[] permissions, int[] grantResults) {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults);

@@ -48,11 +48,11 @@ public class BookTreatmentActivity extends AppCompatActivity {
         String contact = intent.getStringExtra("contact");
         String workingHours = intent.getStringExtra("working_hours");
 
-        editTextTreatment.setText(treatment);
-        editTextClinic.setText(clinic);
-        editTextAddress.setText(address);
-        editTextContact.setText(contact);
-        editTextWorkingHours.setText(workingHours);
+        editTextTreatment.setText("Treatment: " + treatment);
+        editTextClinic.setText("Clinic: " + clinic);
+        editTextAddress.setText("Address: " + address);
+        editTextContact.setText("Contact: " + contact);
+        editTextWorkingHours.setText("Working Hours: " + workingHours);
 
         //date picker
         initDatePicker();

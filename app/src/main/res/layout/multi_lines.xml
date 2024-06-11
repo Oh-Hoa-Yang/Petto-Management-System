@@ -32,7 +32,7 @@
             android:id="@+id/textViewLineC"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_weight="0.60"
+            android:layout_weight="0.40"
             android:text="Text View"
             android:textColor="@color/white"
             android:textSize="12sp" />
@@ -40,7 +40,7 @@
             android:id="@+id/textViewLineD"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_weight="0.40"
+            android:layout_weight="0.60"
             android:text="Text View"
             android:textColor="@color/white"
             android:textSize="12sp" />

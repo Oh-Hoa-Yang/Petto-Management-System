@@ -106,10 +106,10 @@ public class SelectClinicActivity extends AppCompatActivity {
 
         for(int i = 0; i < clinic_details.length; i++){
             item = new HashMap<>();
-            item.put("line1", clinic_details[i][0]);
-            item.put("line2", clinic_details[i][1]);
-            item.put("line3", clinic_details[i][2]);
-            item.put("line4", clinic_details[i][3]);
+            item.put("line1", "Clinic: " + clinic_details[i][0]);
+            item.put("line2", "Address: " + clinic_details[i][1]);
+            item.put("line3", "Contact: " + clinic_details[i][2]);
+            item.put("line4", "Working Hours: " + clinic_details[i][3]);
             list.add(item);
         }
         adapter = new SimpleAdapter(this,

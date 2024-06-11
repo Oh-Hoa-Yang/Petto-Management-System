@@ -114,6 +114,7 @@
                     android:layout_marginTop="30dp"
                     android:backgroundTint="@color/dpurple"
                     android:text="Add Photo"
+                    android:textColor="@color/white"
                     android:textSize="18sp"
                     app:cornerRadius="20dp" />
 
@@ -124,6 +125,7 @@
                     android:layout_marginTop="20dp"
                     android:backgroundTint="@color/dpurple"
                     android:text="Register Pet"
+                    android:textColor="@color/white"
                     android:textSize="18sp"
                     app:cornerRadius="20dp" />
 

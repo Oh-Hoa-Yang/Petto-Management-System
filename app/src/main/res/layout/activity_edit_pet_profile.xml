@@ -62,18 +62,6 @@
                     android:textColor="@color/black" />
 
                 <EditText
-                    android:id="@+id/edit_pet_type"
-                    android:layout_width="match_parent"
-                    android:layout_height="50dp"
-                    android:layout_marginTop="20dp"
-                    android:background="@drawable/border"
-                    android:drawablePadding="8dp"
-                    android:hint="Pet Type"
-                    android:inputType="text"
-                    android:padding="8dp"
-                    android:textColor="@color/black" />
-
-                <EditText
                     android:id="@+id/edit_pet_age"
                     android:layout_width="match_parent"
                     android:layout_height="50dp"
@@ -82,6 +70,18 @@
                     android:drawablePadding="8dp"
                     android:hint="Pet Age"
                     android:inputType="number"
+                    android:padding="8dp"
+                    android:textColor="@color/black" />
+
+                <EditText
+                    android:id="@+id/edit_pet_type"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_marginTop="20dp"
+                    android:background="@drawable/border"
+                    android:drawablePadding="8dp"
+                    android:hint="Pet Type"
+                    android:inputType="text"
                     android:padding="8dp"
                     android:textColor="@color/black" />
 

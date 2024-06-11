@@ -2,8 +2,6 @@ package com.example.pettomanagementsystem;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -22,20 +20,20 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
-
-
 public class PetProfileActivity extends AppCompatActivity {
 
     Button editProfileButton, registerNewPet;
-    TextView petageView, petnameView, pettypeView, breedView;
+    TextView petageView, petnameView, pettypeView, breedView, petidView;
     ImageView petProfileImageView;
     DatabaseReference petReference;
+    private String petId;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_pet_profile);
 
+//        petidView = findViewById(R.id.pet_id);
         petnameView = findViewById(R.id.petname);
         petageView = findViewById(R.id.pet_age);
         pettypeView = findViewById(R.id.pettype);
@@ -58,6 +56,9 @@ public class PetProfileActivity extends AppCompatActivity {
                 @Override
                 public void onDataChange(DataSnapshot dataSnapshot) {
                     for (DataSnapshot petSnapshot : dataSnapshot.getChildren()) {
+                        petId = petSnapshot.getKey(); // Get the petId from the database
+
+                        // Fetch other details under each pet node
                         String petName = petSnapshot.child("name").getValue(String.class);
                         String petAge = petSnapshot.child("age").getValue(String.class);
                         String petType = petSnapshot.child("type").getValue(String.class);
@@ -65,6 +66,7 @@ public class PetProfileActivity extends AppCompatActivity {
                         String petPhotoUrl = petSnapshot.child("photo").getValue(String.class);
 
                         // Display the pet information in TextViews
+//                        petidView.setText(petId); // Display petId
                         petnameView.setText(petName);
                         petageView.setText(petAge);
                         pettypeView.setText(petType);
@@ -77,6 +79,9 @@ public class PetProfileActivity extends AppCompatActivity {
                             // If there's no photo available, you can set a default image
                             petProfileImageView.setImageResource(R.drawable.default_pet_image);
                         }
+
+                        // Since you are looping through pets, consider breaking after finding the pet you want to edit
+                        break;
                     }
                 }
 
@@ -88,6 +93,7 @@ public class PetProfileActivity extends AppCompatActivity {
 
             editProfileButton.setOnClickListener(v -> {
                 Intent intent = new Intent(PetProfileActivity.this, EditPetProfileActivity.class);
+                intent.putExtra("petId", petId); // Pass the petId to EditPetProfileActivity
                 startActivity(intent);
             });
 
@@ -97,7 +103,6 @@ public class PetProfileActivity extends AppCompatActivity {
             });
         }
     }
-
 
     private void onNavigationIconClick() {
         Intent intent = new Intent(PetProfileActivity.this, SideMenuActivity.class);

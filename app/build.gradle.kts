@@ -56,4 +56,14 @@ dependencies {
 
     implementation(platform("com.google.firebase:firebase-bom:33.1.0"))
     implementation("com.google.firebase:firebase-analytics")
+
+    implementation("com.google.firebase:firebase-auth:23.0.0") {
+        exclude(group = "androidx.lifecycle", module = "lifecycle-viewmodel-savedstate")
+    }
+    implementation("com.google.firebase:firebase-storage:21.0.0") {
+        exclude(group = "androidx.lifecycle", module = "lifecycle-viewmodel-savedstate")
+    }
+    implementation("com.google.firebase:firebase-database:21.0.0") {
+        exclude(group = "androidx.lifecycle", module = "lifecycle-viewmodel-savedstate")
+    }
 }

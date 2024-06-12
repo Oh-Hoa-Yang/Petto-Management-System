@@ -109,6 +109,8 @@ public class PetProfileActivity extends AppCompatActivity {
                         if (databaseError == null) {
                             Toast.makeText(PetProfileActivity.this, "Pet profile deleted successfully.", Toast.LENGTH_SHORT).show();
                             // Optionally, you can refresh the activity or navigate to another activity
+                            Intent intent = new Intent(PetProfileActivity.this, HomeActivity.class);
+                            startActivity(intent);
                             finish(); // Close the current activity
                         } else {
                             Toast.makeText(PetProfileActivity.this, "Failed to delete pet profile.", Toast.LENGTH_SHORT).show();

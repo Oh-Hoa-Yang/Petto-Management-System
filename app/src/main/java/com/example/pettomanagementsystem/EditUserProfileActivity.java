@@ -132,6 +132,8 @@ public class EditUserProfileActivity extends AppCompatActivity {
         updateProfilePicture(userId, selectedImageUri.toString());
 
         Toast.makeText(EditUserProfileActivity.this, "Edited Successfully", Toast.LENGTH_LONG).show();
+        Intent intent = new Intent(EditUserProfileActivity.this, ProfileActivity.class);
+        startActivity(intent);
     }
 
     private void saveImageToStorage(Uri imageUri) {

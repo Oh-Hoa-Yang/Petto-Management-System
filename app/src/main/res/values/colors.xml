@@ -23,4 +23,7 @@
     <color name="bgDark">#D0B7FF</color>
     <color name="blueDark">#5D4FFF</color>
     <color name="titleDark">#510ECC</color>
+
+    <color name="cardColour">#f8f4f4</color>
+    <color name="background">#e8dcfc</color>
 </resources>

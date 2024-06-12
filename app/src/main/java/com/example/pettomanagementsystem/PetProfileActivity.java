@@ -22,8 +22,8 @@ import com.google.firebase.database.ValueEventListener;
 
 public class PetProfileActivity extends AppCompatActivity {
 
-    Button editProfileButton, registerNewPet;
-    TextView petageView, petnameView, pettypeView, breedView, petidView;
+    Button editProfileButton, registerNewPet, deletePetButton;
+    TextView petageView, petnameView, pettypeView, breedView;
     ImageView petProfileImageView;
     DatabaseReference petReference;
     private String petId;
@@ -41,6 +41,7 @@ public class PetProfileActivity extends AppCompatActivity {
         registerNewPet = findViewById(R.id.register_new_pet_btn);
         editProfileButton = findViewById(R.id.profile_edit_btn);
         petProfileImageView = findViewById(R.id.petProfileImageView);
+        deletePetButton = findViewById(R.id.delete_pet_btn);
 
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -100,6 +101,20 @@ public class PetProfileActivity extends AppCompatActivity {
             registerNewPet.setOnClickListener(v -> {
                 Intent intent = new Intent(PetProfileActivity.this, PetRegisterActivity.class);
                 startActivity(intent);
+            });
+
+            deletePetButton.setOnClickListener(v -> {
+                if (petId != null) {
+                    petReference.child(petId).removeValue((databaseError, databaseReference) -> {
+                        if (databaseError == null) {
+                            Toast.makeText(PetProfileActivity.this, "Pet profile deleted successfully.", Toast.LENGTH_SHORT).show();
+                            // Optionally, you can refresh the activity or navigate to another activity
+                            finish(); // Close the current activity
+                        } else {
+                            Toast.makeText(PetProfileActivity.this, "Failed to delete pet profile.", Toast.LENGTH_SHORT).show();
+                        }
+                    });
+                }
             });
         }
     }

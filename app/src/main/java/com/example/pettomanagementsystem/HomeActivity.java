@@ -53,14 +53,14 @@ public class HomeActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-//
-//        emergencyCard.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                Intent intent = new Intent(HomeActivity.this, EmergencyActivity.class);
-//                startActivity(intent);
-//            }
-//        });
+
+        emergencyCard.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(HomeActivity.this, EmergencyActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 
     public void onNavigationIconClick() {
